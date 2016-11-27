@@ -1,0 +1,30 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </button>
+    <a routerLink="/dashboard"><img class="navbar-brand" src="app/img/logo.png"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-center">
+    <li><form class="navbar-form navbar-left" name="search" id="search"><div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." [(ngModel)]="searchPattern" name="searchpattern">
+      <span class="input-group-btn">
+        <button class="btn btn-default btn-sample" type="button" (click)="search()">Go!</button>
+      </span>
+    </div></form>
+    </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li *ngIf="loggedUser"><a routerLink="/account/{{loggedUser?.email}}"><span class="glyphicon glyphicon-user"></span> {{loggedUser?.email}}</a></li>
+    <li *ngIf="loggedUser"><a routerLink="/" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    <li *ngIf="!loggedUser"><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <li><a routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart <span class="badge">{{cartCount}}</span></a></li>
+    </ul>
+  </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

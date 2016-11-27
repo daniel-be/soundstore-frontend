@@ -1,0 +1,41 @@
+<span class="category">Song</span>
+<br>
+<span class="category-heading">{{song?.name}}</span> <button type="button" class="btn btn-sample btn-sm" (click)="addToCart(song)" [disabled]="inCart(song?.song_id)">$ {{song?.price}}<i class="glyphicon glyphicon-shopping-cart"></i></button>
+<br>
+<div class="row">
+  <div class="col-md-2">
+    <div class="vert-attr">
+      <span class="attributes">ARTIST</span>
+      <br>
+      <span class="attribute-value">{{song?.artist_name}}</span>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="vert-attr">
+      <span class="attributes">DURATION</span>
+      <br>
+      <span class="attribute-value">{{song?.duration}}</span>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="vert-attr">
+      <span class="attributes">RELEASE</span>
+      <br>
+      <span class="attribute-value">{{song?.release}}</span>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="vert-attr">
+      <span class="attributes">GENRE</span>
+      <br>
+      <span class="attribute-value">{{song?.genre_name}}</span>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="vert-attr">
+      <span class="attributes">ALBUM</span>
+      <br>
+      <img src="{{song?.album_img_url}}" class="img-responsive" alt="Responsive image">
+    </div>
+  </div>
+</div>

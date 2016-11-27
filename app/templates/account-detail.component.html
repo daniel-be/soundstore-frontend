@@ -1,0 +1,64 @@
+<div class="address-container" *ngIf="httpStatus!=404">
+  <h3>Billing address</h3>
+  <table class="table">
+    <tr>
+      <td><span class="attributes">FIRSTNAME</span></td>
+      <td><span class="attribute-value">{{address?.firstname}}</span></td>
+    </tr>
+    <tr>
+      <td><span class="attributes">LASTNAME</span></td>
+      <td><span class="attribute-value">{{address?.lastname}}</span></td>
+    </tr>
+    <tr>
+      <td><span class="attributes">CITY</span></td>
+      <td><span class="attribute-value">{{address?.postal_code}} {{address?.name}}</span></td>
+    </tr>
+    <tr>
+      <td><span class="attributes">STREET</span></td>
+      <td><span class="attribute-value">{{address?.street}} {{address?.housenumber}}</span></td>
+    </tr>
+    <tr>
+      <td><span class="attributes">COUNTRY</span></td>
+      <td><span class="attribute-value">{{address?.en}}</span></td>
+    </tr>
+  </table>
+</div>
+<div class="address-form" *ngIf="httpStatus==404">
+  <h3>Add billing address</h3>
+  <form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="firstname">Firstname</label>
+    <input type="text" class="form-control" id="firstname" placeholder="Firstname" [(ngModel)]="formAddress.firstname" name="first">
+  </div>
+  <div class="form-group">
+    <label for="password">Lastname</label>
+    <input type="text" class="form-control" id="Lastname" placeholder="Lastname" [(ngModel)]="formAddress.lastname" name="last">
+  </div>
+  <div class="form-group">
+    <label for="street">Street</label>
+    <input type="text" class="form-control" id="street" placeholder="Street" [(ngModel)]="formAddress.street" name="streetname">
+  </div>
+  <div class="form-group">
+    <label for="housenumber">Housenumber</label>
+    <input type="text" class="form-control" id="housenumber" placeholder="Housenumber" [(ngModel)]="formAddress.housenumber" name="house">
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <input type="text" class="form-control" id="city" placeholder="City" [(ngModel)]="formAddress.cityname" name="cityname">
+  </div>
+  <div class="form-group">
+    <label for="postalcode">Postal Code</label>
+    <input type="text" class="form-control" id="postalcode" placeholder="Postal Code" [(ngModel)]="formAddress.postalcode" name="postalcode">
+  </div>
+  <div class="form-group">
+    <label for="country">Country</label>
+    <select class="form-control" id="country" name="countrySelect" [(ngModel)]="formAddress.countryid">
+      <option *ngFor="let country of countries" value="{{country?.country_id}}">{{country?.en}}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-default btn-success">Submit</button>
+</form>
+<div class="alert alert-success" *ngIf="addStatus==201">
+  Billing address successfully added.
+</div>
+</div>

@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-2" *ngFor="let album of dashboardAlbums">
+    <div class="thumbnail">
+      <img [src]="album?.img_url" alt="...">
+      <div class="caption">
+        <a routerLink="/album/{{album?.album_id}}"><h4>{{album?.name}}</h4></a>
+        <p class="table-attribute-artist">{{album?.artist_name}}</p>
+      </div>
+    </div>
+  </div>
+</div>

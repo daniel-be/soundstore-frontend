@@ -1,0 +1,12 @@
+<form class="form-inline" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label class="sr-only" for="email">Email address</label>
+    <input type="email" class="form-control" id="email" placeholder="Email" required [(ngModel)]="userModel.email" name="email">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="password">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password" required [(ngModel)]="userModel.password" name="password">
+  </div>
+  <button type="submit" class="btn btn-default">Sign in</button>
+</form>
+<a routerLink="/register">Or create an account.</a>

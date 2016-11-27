@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-3">
+    <img src="{{album?.img_url}}" class="img-responsive" alt="Responsive image">
+  </div>
+  <div class="col-md-9">
+    <span class="category">ALBUM</span>
+    <br>
+    <span class="category-heading">{{album?.name}}</span>
+    <br>
+    <div class="attribute-group">
+      <span class="attributes">ARTIST </span><span class="attribute-value">{{album?.artist_name}}</span>
+    </div>
+
+    <div class="attribute-group">
+      <span class="attributes">RELEASE </span><span class="attribute-value">{{album?.release}}</span>
+    </div>
+
+    <div class="attribute-group">
+      <span class="attributes">SONGS </span><span class="attribute-value">{{album?.song_count}}</span>
+    </div>
+
+    <div class="attribute-group">
+      <span class="attributes">DURATION </span><span class="attribute-value">{{album?.duration}}</span>
+    </div>
+
+    <div class="attribute-group">
+      <button type="button" class="btn btn-sample btn-sm" (click)="addAlbumToCart(album)" [disabled]="inCartAlbum()">$ {{price}}<i class="glyphicon glyphicon-shopping-cart"></i></button>
+    </div>
+  </div>
+</div>
+<br>
+<h4 *ngIf="httpStatus==404">NO SONGS FOUND ON THIS ALBUM</h4>
+<div class="album-songs" *ngIf="foundSongsCount > 0">
+  <h4>{{foundSongsCount}} SONGS FOUND ON THIS ALBUM</h4>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Genre</th>
+            <th>Duration</th>
+            <th>Buy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let song of albumSongs">
+            <td><a routerLink="/song/{{song?.song_id}}">{{song?.name}}</a></td>
+            <td class="table-attribute-artist">{{song?.artist_name}}</td>
+            <td class="table-attribute">{{song?.genre_name}}</td>
+            <td class="table-attribute">{{song?.duration}}</td>
+            <td><button type="button" class="btn btn-sample btn-xs" (click)="addSongToCart(song)" [disabled]="inCart(song?.song_id)">$ {{song?.price}}<i class="glyphicon glyphicon-shopping-cart"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
