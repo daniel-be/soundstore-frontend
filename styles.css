@@ -1,0 +1,121 @@
+*{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: lighter;
+  font-size: 13px;
+  color: #f5f5ef;
+}
+body{
+  background-color: #333333;
+  padding-top: 75px;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+option{
+  color: #000000;
+}
+.attribute-group{
+  margin-top: 5px;
+}
+a{
+  color: #f5f5ef;
+  font-weight: bolder;
+}
+a:hover{
+  color: #f5f5ef;
+}
+table td {
+    border-top: none !important;
+}
+.table th, .table td {
+     border-top: none !important;
+ }
+.attributes{
+  color: #999999;
+  font-size: 17px;
+}
+.table-attribute{
+  color: #999999;
+  font-weight: lighter;
+}
+.table-attribute-artist{
+  color: #32D1ED;
+  font-weight: lighter;
+}
+.attribute-value{
+  font-size: 17px;
+  font-weight: bolder;
+}
+.category{
+  color: #999999;
+}
+.category-heading{
+  font-size: 35px;
+}
+.vert-attr{
+  border-left-color: #999999;
+  border-left-width: thin;
+}
+.thumbnail{
+  border: 0;
+  background-color: #4d4d4d;
+  text-align: center;
+  padding: 0 0 0 0;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+.remove:hover{
+  color: red;
+}
+.btn-sample {
+  color: #FFFFFF;
+  background-color: #32D1ED;
+  border-color: #32D1ED;
+}
+
+.btn-sample:hover,
+.btn-sample:focus,
+.btn-sample:active,
+.btn-sample.active,
+.open .dropdown-toggle.btn-sample {
+  color: #FFFFFF;
+  background-color: #2EC1DB;
+  border-color: #32D1ED;
+}
+
+.btn-sample:active,
+.btn-sample.active,
+.open .dropdown-toggle.btn-sample {
+  background-image: none;
+}
+
+.btn-sample.disabled,
+.btn-sample[disabled],
+fieldset[disabled] .btn-sample,
+.btn-sample.disabled:hover,
+.btn-sample[disabled]:hover,
+fieldset[disabled] .btn-sample:hover,
+.btn-sample.disabled:focus,
+.btn-sample[disabled]:focus,
+fieldset[disabled] .btn-sample:focus,
+.btn-sample.disabled:active,
+.btn-sample[disabled]:active,
+fieldset[disabled] .btn-sample:active,
+.btn-sample.disabled.active,
+.btn-sample[disabled].active,
+fieldset[disabled] .btn-sample.active {
+  background-color: #32D1ED;
+  border-color: #32D1ED;
+}
+
+.btn-sample .badge {
+  color: #32D1ED;
+  background-color: #FFFFFF;
+}
+.navbar-brand{
+  padding: 0 0 0 0 ;
+}
